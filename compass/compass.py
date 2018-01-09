@@ -26,7 +26,7 @@ def sign(n):
         return 0
 
 def clamp_pixel(n):
-    return min(7, max(0, round(n)))
+    return int(min(7, max(0, round(n))))
 
 def draw_needle(sense, x, y, r, g, b):
     if abs(x) > abs(y):
