@@ -3,8 +3,8 @@ from math import radians, sin, cos, sqrt
 
 sense = SenseHat()
 
-A = (130, 130, 130)
-B = (170, 170, 170)
+A = (45, 45, 45)
+B = (60, 60, 60)
 C = (20, 20, 20)
 compass = [
     C,A,A,A,A,A,A,C,
@@ -33,7 +33,7 @@ def draw_needle(sense, x, y, r, g, b):
         x = sign(x)
     elif abs(y) > abs(x):
         y = sign(y)
-    for tail in range(3):
+    for tail in range(4):
         draw_x = clamp_pixel(x * 3.5 + 3.5 - x * tail)
         draw_y = clamp_pixel(y * 3.5 + 3.5 - y * tail)
         sense.set_pixel(draw_x, draw_y, r, g, b)
@@ -43,5 +43,5 @@ while True:
     x = cos(radians(north))
     y = sin(radians(north))
     sense.set_pixels(compass)
-    draw_needle(sense, x, y, 255, 128, 128)
+    draw_needle(sense, x, y, 255, 64, 64)
     draw_needle(sense, -x, -y, 210, 210, 210)
