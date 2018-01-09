@@ -3,9 +3,8 @@ from sense_hat import SenseHat
 sense = SenseHat()
 
 def apply_color(r, g, b):
-    pixel_list = []
-    for i in range(8 * 8):
-        pixel_list.append([r, g, b])
+    global sense
+    pixel_list = [(r, g, b) for i in range(64)]
     sense.set_pixels(pixel_list)
 
 print("Värin punaisuus (0-255):")
