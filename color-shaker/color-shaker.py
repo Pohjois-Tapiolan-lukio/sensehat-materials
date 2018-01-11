@@ -3,6 +3,7 @@ from time import sleep
 from random import randrange
 
 sense = SenseHat()
+sense.clear()
 # How many Gs trigger the shaking
 shake_threshold = 1.0
 
