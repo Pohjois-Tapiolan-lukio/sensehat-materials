@@ -9,7 +9,7 @@ sense = SenseHat()
 # The URL of the database server (github.com/pohjois-tapiolan-lukio/iot-server)
 iot_server_url = "http://192.168.43.158:5000"
 # The name of the db this script will create and store information in
-db_name = "env-sensor-demo-" + str(randrange(10000, 99999))
+db_name = "testdemo"
 
 # Maps a value (temperature in celsius) to the amount of lit up pixels (0-6)
 def map_to_leds(value, start, end):

@@ -14,7 +14,7 @@ def apply_color(rgb):
     sense.set_pixels(pixel_list)
 
 def generate_color():
-    return [randrange(128, 255), randrange(128, 255), randrange(128, 255)]
+    return [randrange(50, 255), randrange(50, 255), randrange(50, 255)]
 
 while True:
     accel = sense.get_accelerometer_raw()
@@ -23,5 +23,5 @@ while True:
         sleep(3)
         temp = sense.get_temperature()
         pressure = sense.get_pressure()
-        sense.show_message("{:.1f} C   {:.1f} hPa".format(temp, pressure), scroll_speed=.05)
+        sense.show_message("{:.1f} C   {:.1f} hPa".format(temp, pressure))
         sleep(1)
