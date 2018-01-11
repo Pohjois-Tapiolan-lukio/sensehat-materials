@@ -21,6 +21,7 @@ while True:
     pressure = sense.get_pressure()
     humidity = sense.get_humidity()
     sense.clear()
-    display_stat(0, temp, 23, 28, 255, 128, 0)
+    display_stat(0, temp, 22, 28, 255, 128, 0)
     display_stat(1, pressure, 1033, 1035, 160, 160, 160)
     display_stat(2, humidity, 17, 25, 0, 128, 255)
+    sleep(0.1)
