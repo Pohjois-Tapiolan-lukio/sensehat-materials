@@ -13,14 +13,14 @@ def apply_color(rgb):
     sense.set_pixels(pixel_list)
 
 def generate_color():
-    return [randrange(255), randrange(255), randrange(255)]
+    return [randrange(128, 255), randrange(128, 255), randrange(128, 255)]
 
 while True:
-    accel = sense.get_accelerometer()
-    if accel.x > shake_threshold or accel.y > shake_threshold or accel.z > shake_threshold:
+    accel = sense.get_accelerometer_raw()
+    if accel["x"] > shake_threshold or accel["y"] > shake_threshold or accel["z"] - 1 > shake_threshold:
         apply_color(generate_color())
-        sleep(5)
+        sleep(3)
         temp = sense.get_temperature()
         pressure = sense.get_pressure()
-        sense.show_message("%s C   %s hPa".format(temp, pressure))
+        sense.show_message("{:.1f} C   {:.1f} hPa".format(temp, pressure), scroll_speed=.05)
         sleep(1)
