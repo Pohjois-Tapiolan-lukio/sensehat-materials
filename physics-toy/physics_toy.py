@@ -46,6 +46,7 @@ def update(sense):
         if event.action == "pressed" and event.direction == "middle":
             init(sense)
     gyro = sense.get_gyroscope()
+    print(gyro)
     sense.clear()
     x_accel = G * sign(-sin(radians(gyro["pitch"] - zero_rotation["pitch"])))
     y_accel = G * sign(sin(radians(gyro["roll"] - zero_rotation["roll"])))
