@@ -7,7 +7,7 @@ import requests
 sense = SenseHat()
 
 # The URL of the database server (github.com/pohjois-tapiolan-lukio/iot-server)
-iot_server_url = "http://192.168.43.158:5000"
+iot_server_url = "http://iot.olarinlukio.fi:5000"
 # The name of the db this script will create and store information in
 db_name = "testdemo"
 
