@@ -29,11 +29,11 @@ def display_stat(stat_position, value, range_start, range_end, r, g, b):
 
 # Initialize the database that the data will be stored in
 def init_db():
-    requests.get("{:s}/api/v1/{:s}/create/time;temperature;pressure;humidity".format(iot_server_url, db_name))
+    requests.get("{:s}/database/{:s}/create/time;temperature;pressure;humidity".format(iot_server_url, db_name))
 
 # Send a data point to the database
 def send_data(time, temp, pressure, humidity):
-    requests.get("{:s}/api/v1/{:s}/insert/{:f};{:f};{:f};{:f}".format(iot_server_url, db_name, time, temp, pressure, humidity))
+    requests.get("{:s}/database/{:s}/insert/{:f};{:f};{:f};{:f}".format(iot_server_url, db_name, time, temp, pressure, humidity))
 
 
 init_db()
